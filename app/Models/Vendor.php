@@ -15,4 +15,9 @@ class Vendor extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+    
+    public function markets()
+    {
+        return $this->belongsToMany('App\Models\Markets');
+    }
 }
