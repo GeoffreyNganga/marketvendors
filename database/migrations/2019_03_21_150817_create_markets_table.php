@@ -14,6 +14,7 @@ class CreateMarketsTable extends Migration
     public function up()
     {
         Schema::create('markets', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->string('location');
