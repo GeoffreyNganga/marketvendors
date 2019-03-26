@@ -19,6 +19,12 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    //
+    public function vendor()
+    {
+        return $this->hasOne('App\Models\Vendor');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
