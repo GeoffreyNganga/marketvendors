@@ -12,3 +12,5 @@ $factory->define(Vendor::class, function (Faker $faker) {
         'image'=>$faker->imageUrl($width = 640, $height = 480),
     ];
 });
+
+// 'some_id'=>function(){ return App\Models\User::all()->random();}

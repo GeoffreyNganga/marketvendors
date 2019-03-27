@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Market;
+use App\Http\Resources\MarketResource;
 
 class MarketController extends Controller
 {
@@ -13,7 +15,18 @@ class MarketController extends Controller
      */
     public function index()
     {
-        //
+        $markets= Market::all();
+        //return response->json($markets);
+        return MarketResource::collection($markets);
+
+    }
+
+    public function market_vendors()
+    {
+        $markets= Market::all();
+        //return response->json($markets);
+        return MarketResource::collection($markets);
+
     }
 
     /**
@@ -24,7 +37,7 @@ class MarketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -35,7 +48,8 @@ class MarketController extends Controller
      */
     public function show($id)
     {
-        //
+        $market= Market::findorFail($id);
+        return new MarketResource($market);
     }
 
     /**
